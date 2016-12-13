@@ -4,7 +4,12 @@ Use one racing game provided by openAI Universe.
 
 ## Install Universe 
 * Ubuntu 16.04
-* python 3.5
+* create a conda environment:
+* * conda create --name openai-universe python=3
+* * source activate openai-universe
+* * pip install gym
+* * pip install universe
+
 * [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/) 
 when importing Universe, it still has an error. Looks like docker is not started. Starting docker using
 ```
