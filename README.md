@@ -62,7 +62,23 @@ while True:
   observation_n, reward_n, done_n, info = env.step(action_n)
   env.render()
 ```
+to quickly test whether the importing is Okay, do 
+```
+python -c "import gym; import universe"
+```
+No error. So the two modules are correctly installed. 
 
+For this line
+```
+env.configure(remotes=1)  # automatically creates a local docker container
+```
+having an error
+```
+  File "/home/hyao/anaconda2/envs/openai-universe/lib/python3.5/site-packages/docker/transport/unixconn.py", line 33, in connect
+    sock.connect(self.unix_socket)
+PermissionError: [Errno 13] Permission denied
+```
+This is related to docker. 
 
 
 
