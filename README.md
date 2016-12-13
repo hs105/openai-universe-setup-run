@@ -27,6 +27,11 @@ run bash in a docker
 ```
 sudo docker run -it ubuntu bash
 ```
+The last step is to add the currrent user to the docker group. This is important because by default docker is only run with sudo users. 
+```
+sudo usermod -aG docker $USER
+```
+If you don't do this, you will permission errors with Universe. 
 
 ## Install Universe 
 * Ubuntu 16.04
