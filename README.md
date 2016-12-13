@@ -1,6 +1,7 @@
 # car-race-algo
+The goal of this project is to implement and develop RL algorithms for a racing game using images. 
 
-Use one racing game provided by openAI Universe. 
+We are using the DustDive whose control Interface is provided by openAI Universe (released Dec. 5, 2016). 
 
 ## Setup git account
 * git config --global user.name "<YourGitHubUserName>"
