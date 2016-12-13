@@ -1,7 +1,4 @@
-# car-race-algo
-The goal of this project is to implement and develop RL algorithms for a game using images. 
-
-We are using the DustDive whose control Interface is provided by openAI Universe (released Dec. 5, 2016). 
+This document shows how to run openAI Universe (released Dec. 5, 2016) on Ubuntu 16.04 with Python 3. 
 
 ## Setup git account
 * git config --global user.name "<YourGitHubUserName>"
