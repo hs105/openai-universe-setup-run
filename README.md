@@ -3,11 +3,11 @@
 Use one racing game provided by openAI Universe. 
 
 ## Setup git account
-* git config --global user.name "hs105"
-* git config --global user.email "hengshuai@gmail.com"
+* git config --global user.name "<YourGitHubUserName>"
+* git config --global user.email "<YourGitHubEmail>"
 * generate a ssh key for your account
 ```
-ssh-keygen -t rsa -C "hengshuai@gmail.com"
+ssh-keygen -t rsa -C "<YourGitHubEmail>"
 ```
 you should select to overite your old one. 
 * then add the public key to your github account. 
@@ -70,7 +70,19 @@ python -c "import gym; import universe"
 ```
 No error. So it is correctly installed!
 
+## Setup Pycharm
+You can set up Pycharm's interpretter to use the same anaconda env you created. 
+Go Terminal, 
+```
+source activate openai-universe
+which python
+```
+copy the output. Go to Pycharm Settings, Interpretter, "add local", paste. 
+
+
+
 ## DustDrive on Universe
+In Pycharm, create a project, add a python file with the following content:
 ```
 import gym
 import universe  # register the universe environments
@@ -84,7 +96,7 @@ while True:
   observation_n, reward_n, done_n, info = env.step(action_n)
   env.render()
 ```
-
+It basically runs a game in a browser with a simple agent keeping pressing the "arrow up" key. 
 
 
 
