@@ -2,6 +2,17 @@
 
 Use one racing game provided by openAI Universe. 
 
+## Setup git account
+* git config user.name "hs105"
+* git config user.email "hengshuai@gmail.com"
+* generate a ssh key for your account
+```
+ssh-keygen -t rsa -C "hengshuai@gmail.com"
+```
+you should select to overite your old one. 
+* then add this to your github account. 
+
+
 ## Install Universe 
 * Ubuntu 16.04
 * create a conda environment:
