@@ -38,15 +38,17 @@ sudo usermod -aG docker $USER
 If you don't do this, you will permission errors with Universe. 
 
 ## Install Universe 
-* Ubuntu 16.04
-* create a conda environment:
-* * conda create --name openai-universe python=3
-* * source activate openai-universe
-* * pip install gym
-* * pip install universe
+OS: Ubuntu 16.04
 
-* [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/) 
-when importing Universe, it still has an error. Looks like docker is not started. Starting docker using
+### create a conda environment:
+* conda create --name openai-universe python=3
+* source activate openai-universe
+* pip install gym
+* pip install universe
+
+### Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/) 
+
+## Start docker using
 ```
 sudo service docker start
 ```
