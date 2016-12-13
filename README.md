@@ -27,7 +27,7 @@ If you do without "sudo", it will say:
 ```
 Cannot connect to the Docker daemon. Is the docker daemon running on this host?
 ```
-run bash in a docker
+Another test: run bash in a docker
 ```
 sudo docker run -it ubuntu bash
 ```
