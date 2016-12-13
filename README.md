@@ -10,7 +10,11 @@ Use one racing game provided by openAI Universe.
 ssh-keygen -t rsa -C "hengshuai@gmail.com"
 ```
 you should select to overite your old one. 
-* then add this to your github account. 
+* then add the public key to your github account. 
+```
+cat ~/.ssh/id_rsa.pub
+```
+copy and paste to GitHub Setting SSH Key. 
 
 ## Install Docker
 * prerequisites: [follow here](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/install-the-latest-version)   
@@ -56,6 +60,12 @@ Dec 13 14:54:26 hyao-linux systemd[1]: Started Docker Application Container Engi
 ```
 docker started successfully. 
 
+## Test
+to quickly test whether Unviverse is installed correctly, do 
+```
+python -c "import gym; import universe"
+```
+No error. So it is correctly installed!
 
 ## DustDrive on Universe
 ```
@@ -71,11 +81,7 @@ while True:
   observation_n, reward_n, done_n, info = env.step(action_n)
   env.render()
 ```
-to quickly test whether the importing is Okay, do 
-```
-python -c "import gym; import universe"
-```
-No error. So the two modules are correctly installed. 
+
 
 
 
