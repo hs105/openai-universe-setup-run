@@ -12,6 +12,21 @@ ssh-keygen -t rsa -C "hengshuai@gmail.com"
 you should select to overite your old one. 
 * then add this to your github account. 
 
+## Install Docker
+* prerequisites: [follow here](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/install-the-latest-version)   
+* [install the latest version of docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/install-the-latest-version)
+* test if it's working
+```
+sudo docker ps
+```
+If you do without "sudo", it will say:
+```
+Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+```
+run bash in a docker
+```
+sudo docker run -it ubuntu bash
+```
 
 ## Install Universe 
 * Ubuntu 16.04
@@ -26,27 +41,16 @@ when importing Universe, it still has an error. Looks like docker is not started
 ```
 sudo service docker start
 ```
-has an error "Job for docker.service failed because the control process exited with error code. See "systemctl status docker.service" and "journalctl -xe" for details."
-Do 
+It will have no output. To check status, do
 ```
 systemctl status docker.service
 ```
-we see 
+then it shows
 ```
- docker.service - Docker Application Container Engine
-   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
-   Active: failed (Result: exit-code) since Mon 2016-12-12 16:36:06 PST; 1min 0s ago
-     Docs: https://docs.docker.com
-  Process: 5374 ExecStart=/usr/bin/dockerd -H fd:// (code=exited, status=1/FAILURE)
- Main PID: 5374 (code=exited, status=1/FAILURE)
+Dec 13 14:54:26 hyao-linux systemd[1]: Started Docker Application Container Engi
+```
+docker started successfully. 
 
-Dec 12 16:36:06 hyao-linux systemd[1]: Starting Docker Application Container Engine...
-Dec 12 16:36:06 hyao-linux dockerd[5374]: time="2016-12-12T16:36:06.530659363-08:00" level=fatal msg="Error starting daemon: pid file found, ensure docker is not running or delete /var/ru
-Dec 12 16:36:06 hyao-linux systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
-Dec 12 16:36:06 hyao-linux systemd[1]: Failed to start Docker Application Container Engine.
-Dec 12 16:36:06 hyao-linux systemd[1]: docker.service: Unit entered failed state.
-Dec 12 16:36:06 hyao-linux systemd[1]: docker.service: Failed with result 'exit-code'.
-```
 
 ## DustDrive on Universe
 ```
@@ -68,17 +72,8 @@ python -c "import gym; import universe"
 ```
 No error. So the two modules are correctly installed. 
 
-For this line
-```
-env.configure(remotes=1)  # automatically creates a local docker container
-```
-having an error
-```
-  File "/home/hyao/anaconda2/envs/openai-universe/lib/python3.5/site-packages/docker/transport/unixconn.py", line 33, in connect
-    sock.connect(self.unix_socket)
-PermissionError: [Errno 13] Permission denied
-```
-This is related to docker. 
+
+
 
 
 
