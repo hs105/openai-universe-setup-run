@@ -1,54 +1,86 @@
-# car-race-algo
-
-Use one racing game provided by openAI Universe. 
+This document shows how to run openAI Universe (released Dec. 5, 2016) on Ubuntu 16.04 with Python 3. 
 
 ## Setup git account
-* git config user.name "hs105"
-* git config user.email "hengshuai@gmail.com"
+* git config --global user.name "<YourGitHubUserName>"
+* git config --global user.email "<YourGitHubEmail>"
 * generate a ssh key for your account
 ```
-ssh-keygen -t rsa -C "hengshuai@gmail.com"
+ssh-keygen -t rsa -C "<YourGitHubEmail>"
 ```
 you should select to overite your old one. 
-* then add this to your github account. 
+* then add the public key to your github account. 
+```
+cat ~/.ssh/id_rsa.pub
+```
+copy and paste to GitHub Setting SSH Key. 
 
+## Install Docker
+* prerequisites: [follow here](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/install-the-latest-version)   
+* [install the latest version of docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/install-the-latest-version)
+* test if it's working
+```
+sudo docker ps
+```
+If you do without "sudo", it will say:
+```
+Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+```
+Another test: run bash in a docker
+```
+sudo docker run -it ubuntu bash
+```
+The last step is to add the currrent user to the docker group. This is important because by default docker is only run with sudo users. 
+```
+sudo usermod -aG docker $USER
+```
+If you don't do this, you will later see permission errors with Universe. 
 
 ## Install Universe 
-* Ubuntu 16.04
-* create a conda environment:
-* * conda create --name openai-universe python=3
-* * source activate openai-universe
-* * pip install gym
-* * pip install universe
+OS: Ubuntu 16.04
 
-* [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/) 
-when importing Universe, it still has an error. Looks like docker is not started. Starting docker using
+### create a conda environment:
+* conda create --name openai-universe python=3
+* source activate openai-universe
+* pip install gym
+* pip install universe
+
+### Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/) 
+
+## Start docker 
+Run on command line
 ```
 sudo service docker start
 ```
-has an error "Job for docker.service failed because the control process exited with error code. See "systemctl status docker.service" and "journalctl -xe" for details."
-Do 
+It will have no output. To check status, do
 ```
 systemctl status docker.service
 ```
-we see 
+then it shows
 ```
- docker.service - Docker Application Container Engine
-   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
-   Active: failed (Result: exit-code) since Mon 2016-12-12 16:36:06 PST; 1min 0s ago
-     Docs: https://docs.docker.com
-  Process: 5374 ExecStart=/usr/bin/dockerd -H fd:// (code=exited, status=1/FAILURE)
- Main PID: 5374 (code=exited, status=1/FAILURE)
+Dec 13 14:54:26 hyao-linux systemd[1]: Started Docker Application Container Engi
+```
+docker started successfully. 
 
-Dec 12 16:36:06 hyao-linux systemd[1]: Starting Docker Application Container Engine...
-Dec 12 16:36:06 hyao-linux dockerd[5374]: time="2016-12-12T16:36:06.530659363-08:00" level=fatal msg="Error starting daemon: pid file found, ensure docker is not running or delete /var/ru
-Dec 12 16:36:06 hyao-linux systemd[1]: docker.service: Main process exited, code=exited, status=1/FAILURE
-Dec 12 16:36:06 hyao-linux systemd[1]: Failed to start Docker Application Container Engine.
-Dec 12 16:36:06 hyao-linux systemd[1]: docker.service: Unit entered failed state.
-Dec 12 16:36:06 hyao-linux systemd[1]: docker.service: Failed with result 'exit-code'.
+## Test
+to quickly test whether Unviverse is installed correctly, do 
 ```
+python -c "import gym; import universe"
+```
+No error. So it is correctly installed!
+
+## Setup Pycharm
+You can set up Pycharm's interpretter to use the same anaconda env you created. 
+Go Terminal, 
+```
+source activate openai-universe
+which python
+```
+copy the output. Go to Pycharm Settings, Interpretter, "add local", paste. 
+
+
 
 ## DustDrive on Universe
+In Pycharm, create a project, add a python file with the following content:
 ```
 import gym
 import universe  # register the universe environments
@@ -62,6 +94,9 @@ while True:
   observation_n, reward_n, done_n, info = env.step(action_n)
   env.render()
 ```
+It basically runs a game in a browser with a simple agent keeping pressing the "arrow up" key. 
+
+
 
 
 
