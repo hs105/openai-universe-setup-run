@@ -1,5 +1,5 @@
 # car-race-algo
-The goal of this project is to implement and develop RL algorithms for a racing game using images. 
+The goal of this project is to implement and develop RL algorithms for a game using images. 
 
 We are using the DustDive whose control Interface is provided by openAI Universe (released Dec. 5, 2016). 
 
