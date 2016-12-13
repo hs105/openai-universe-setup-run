@@ -3,8 +3,8 @@
 Use one racing game provided by openAI Universe. 
 
 ## Setup git account
-* git config user.name "hs105"
-* git config user.email "hengshuai@gmail.com"
+* git config --global user.name "hs105"
+* git config --global user.email "hengshuai@gmail.com"
 * generate a ssh key for your account
 ```
 ssh-keygen -t rsa -C "hengshuai@gmail.com"
@@ -35,7 +35,7 @@ The last step is to add the currrent user to the docker group. This is important
 ```
 sudo usermod -aG docker $USER
 ```
-If you don't do this, you will permission errors with Universe. 
+If you don't do this, you will later see permission errors with Universe. 
 
 ## Install Universe 
 OS: Ubuntu 16.04
@@ -48,7 +48,8 @@ OS: Ubuntu 16.04
 
 ### Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/) 
 
-## Start docker using
+## Start docker 
+Run on command line
 ```
 sudo service docker start
 ```
