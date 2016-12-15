@@ -41,7 +41,7 @@ sudo usermod -aG docker $USER
 If you don't do this, you will later see permission errors with OpenAI Universe. 
 
 
-## create a conda environment and install OpenAI-gym and OpenAI-Universe:
+## Create a conda environment and install OpenAI-gym and OpenAI-Universe:
 ```
 conda create --name openai-universe python=3
 source activate openai-universe
@@ -59,8 +59,8 @@ To check status, do
 systemctl status docker.service
 ```
 
-## Test
-to quickly test whether Unviverse is installed correctly, do 
+## Test the installation
+to quickly test whether Universe is installed correctly, do 
 ```
 python -c "import gym; import universe"
 ```
