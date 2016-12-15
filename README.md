@@ -92,7 +92,7 @@ while True:
 It basically runs a game in a browser with a simple agent keeping pressing the "arrow up" key. 
 
 Screenshots:
-![Alt text](https://github.com/hs105/openai-universe-setup-run/screenshots/1.png?raw=true "1")
+![Alt text](https://github.com/hs105/openai-universe-setup-run/screenshots/1.png)
 
 
 
