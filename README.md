@@ -44,8 +44,6 @@ OS: Ubuntu 16.04
 * pip install gym
 * pip install universe
 
-### Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/) 
-
 ## Start docker 
 Run on command line
 ```
