@@ -21,21 +21,23 @@ copy and paste to GitHub Setting SSH Key.
 ## Run Docker as a non-root user 
 Try
 ```
-sudo docker ps
+docker ps
 ```
-If you do without "sudo", it will say:
+It will say:
 ```
 Cannot connect to the Docker daemon. Is the docker daemon running on this host?
 ```
-Another test: run bash in a docker
+This is because by default docker is only run with sudo users. Try another one with sudo
 ```
 sudo docker run -it ubuntu bash
 ```
-The last step is to add the currrent user to the docker group. This is important because by default docker is only run with sudo users. 
+This will start a bash in docker image. 
+
+So the last step is to add the currrent user to the docker group. 
 ```
 sudo usermod -aG docker $USER
 ```
-If you don't do this, you will later see permission errors with Universe. 
+If you don't do this, you will later see permission errors with OpenAI Universe. 
 
 ## Install Universe 
 OS: Ubuntu 16.04
