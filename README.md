@@ -1,13 +1,14 @@
-This document shows how to run openAI Universe (released Dec. 5, 2016) on Ubuntu 16.04 with Python 3. 
+This document shows how to run openAI Universe (released Dec. 5, 2016) on Ubuntu with Python 3. 
+
+OS: Ubuntu 16.04
 
 ## Setup git account
-* git config --global user.name "<YourGitHubUserName>"
-* git config --global user.email "<YourGitHubEmail>"
+* git config --global user.name "YourGitHubUserName"
+* git config --global user.email "YourGitHubEmail"
 * generate a ssh key for your account
 ```
-ssh-keygen -t rsa -C "<YourGitHubEmail>"
+ssh-keygen -t rsa -C "YourGitHubEmail"
 ```
-you should select to overite your old one. 
 * then add the public key to your github account. 
 ```
 cat ~/.ssh/id_rsa.pub
@@ -39,10 +40,8 @@ sudo usermod -aG docker $USER
 ```
 If you don't do this, you will later see permission errors with OpenAI Universe. 
 
-## Install Universe 
-OS: Ubuntu 16.04
 
-### create a conda environment:
+## create a conda environment and install OpenAI-gym and OpenAI-Universe:
 ```
 conda create --name openai-universe python=3
 source activate openai-universe
@@ -55,7 +54,7 @@ Run
 ```
 sudo service docker start
 ```
-It will have no output. To check status, do
+To check status, do
 ```
 systemctl status docker.service
 ```
@@ -65,7 +64,7 @@ to quickly test whether Unviverse is installed correctly, do
 ```
 python -c "import gym; import universe"
 ```
-No error. So it is correctly installed!
+No error. So Universe is correctly installed!
 
 ## Setup Pycharm
 You can set up Pycharm's interpretter to use the same anaconda env you created. 
