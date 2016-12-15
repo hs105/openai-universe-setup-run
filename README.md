@@ -93,6 +93,7 @@ It basically runs a game in a browser with a simple agent keeping pressing the "
 
 Screenshots:
 
-![Alt text](https://github.com/hs105/openai-universe-setup-run/screenshots/1.png)
 
+.. image:: https://github.com/hs105/openai-universe-setup-run/screenshots/1.png
+   :width: 200 px
 
