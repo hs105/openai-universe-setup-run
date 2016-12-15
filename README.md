@@ -17,7 +17,9 @@ copy and paste to GitHub Setting SSH Key.
 ## Install Docker
 * prerequisites: [follow here](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/install-the-latest-version)   
 * [install the latest version of docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/install-the-latest-version)
-* test if it's working
+
+## Run Docker as a non-root user 
+Try
 ```
 sudo docker ps
 ```
@@ -53,11 +55,6 @@ It will have no output. To check status, do
 ```
 systemctl status docker.service
 ```
-then it shows
-```
-Dec 13 14:54:26 hyao-linux systemd[1]: Started Docker Application Container Engi
-```
-docker started successfully. 
 
 ## Test
 to quickly test whether Unviverse is installed correctly, do 
