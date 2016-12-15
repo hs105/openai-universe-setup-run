@@ -43,13 +43,15 @@ If you don't do this, you will later see permission errors with OpenAI Universe.
 OS: Ubuntu 16.04
 
 ### create a conda environment:
-* conda create --name openai-universe python=3
-* source activate openai-universe
-* pip install gym
-* pip install universe
+```
+conda create --name openai-universe python=3
+source activate openai-universe
+pip install gym
+pip install universe
+```
 
 ## Start docker 
-Run on command line
+Run 
 ```
 sudo service docker start
 ```
