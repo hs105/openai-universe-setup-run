@@ -91,7 +91,7 @@ while True:
 ```
 It basically runs a game in a browser with a simple agent keeping pressing the "arrow up" key. 
 
-Screenshots:
+## Screenshots:
 
 ![Alt text](screenshots/1.png)
 
